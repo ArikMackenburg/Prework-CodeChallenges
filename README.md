@@ -1,2 +1,2 @@
-# dsa
-401 Data Structures And Algorithms
+# DSA
+## 401 Data Structures And Algorithms
