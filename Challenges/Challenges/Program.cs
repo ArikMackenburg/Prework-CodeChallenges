@@ -17,6 +17,12 @@ namespace Challenges
             Console.Write(Environment.NewLine);
             Console.WriteLine(Challenge2.LeapYear());
             Console.Write(Environment.NewLine);
+
+            Console.WriteLine("Challenge 3");
+            Console.Write(Environment.NewLine);
+            int[] test = new int[3] { 1, 3, 2 };
+            Console.WriteLine(Challenge3.CheckPerfection(test));
+            Console.Write(Environment.NewLine);
         }
     }
     class Challenge1
@@ -85,5 +91,31 @@ namespace Challenges
             }
         }
     }
-
+    class Challenge3
+    {
+        public static string CheckPerfection(int[] arr)
+        {
+            Console.WriteLine($"[{arr[0]},{arr[1]},{arr[2]}]");
+            int theSum = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                theSum = theSum + arr[i];
+            }
+            int theProduct = 1;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                theProduct = theProduct * arr[i];
+            }
+            Console.WriteLine($"Sum: {theSum}");
+            Console.WriteLine($"Product: {theProduct}");
+            if (theSum == theProduct)
+            {
+                return "Yes";
+            }
+            else
+            {
+                return "No";
+            }
+        }
+    }
 }
