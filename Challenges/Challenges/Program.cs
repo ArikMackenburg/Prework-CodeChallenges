@@ -23,6 +23,27 @@ namespace Challenges
             int[] test = new int[3] { 1, 3, 2 };
             Console.WriteLine(Challenge3.CheckPerfection(test));
             Console.Write(Environment.NewLine);
+
+            Console.WriteLine("Challenge 4");
+            Console.Write(Environment.NewLine);
+            int[,] myArray = new int[3, 5] { { 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10 }, { 11, 12, 13, 14, 15 } };
+            for (int x = 0; x < myArray.GetLength(0); x++)
+            {
+                Console.Write("[");
+                for (int i = 0; i < myArray.GetLength(1); i++)
+                {
+                    Console.Write(string.Format("{0}", myArray[x, i]));
+                    if (i < myArray.GetLength(1) - 1)
+                    {
+                        Console.Write(",");
+                    }
+                }
+                Console.Write("]");
+                Console.Write(Environment.NewLine);
+            }
+            Console.Write(Environment.NewLine);
+            Console.WriteLine("Sum of Each Rows");
+            Console.WriteLine("[" + string.Join(",", Challenge4.SumOfRows(myArray)) + "]");
         }
     }
     class Challenge1
@@ -116,6 +137,23 @@ namespace Challenges
             {
                 return "No";
             }
+        }
+    }
+    class Challenge4
+    {
+        public static int[] SumOfRows(int[,] arr)
+        {
+            int[] result = new int[3];
+            for (int m = 0; m < arr.GetLength(0); m++)
+            {
+                int sum = 0;
+                for (int n = 0; n < arr.GetLength(1); n++)
+                {
+                    sum = sum + arr[m, n];
+                }
+                result[m] = sum;
+            }
+            return result;
         }
     }
 }
