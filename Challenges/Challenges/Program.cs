@@ -11,6 +11,12 @@ namespace Challenges
             //int[] arr = new int[5] { 2, 2, 2, 2, 2 };
             //Console.WriteLine($"[{arr[0]},{arr[1]},{arr[2]},{arr[3]},{arr[4]}]");
             Console.WriteLine($"Final Score: {Challenge1.Grade(Challenge1.GradedArray(), Challenge1.SelectNumber())}");
+            Console.Write(Environment.NewLine);
+
+            Console.WriteLine("Challenge 2");
+            Console.Write(Environment.NewLine);
+            Console.WriteLine(Challenge2.LeapYear());
+            Console.Write(Environment.NewLine);
         }
     }
     class Challenge1
@@ -55,4 +61,29 @@ namespace Challenges
         }
 
     }
+    class Challenge2
+    {
+        public static string LeapYear()
+        {
+            Console.WriteLine("Enter year to see if its leap year");
+            var input = Console.ReadLine();
+            int year = Convert.ToInt32(input);
+            if (year % 4 == 0)
+            {
+                if ((year % 100 == 0 && year % 400 == 0) || year % 100 != 0)
+                {
+                    return "Yes";
+                }
+                else
+                {
+                    return "No";
+                }
+            }
+            else
+            {
+                return "No";
+            }
+        }
+    }
+
 }
